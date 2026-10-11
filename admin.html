@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>JKJ Admin — Property listings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="admin.js" defer></script>
+</head>
+<body class="admin-page">
+  <header class="topbar admin-topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">J</span><span>JKJ<span class="brand-dot">.</span></span></a>
+    <a class="admin-back" href="index.html">← View website</a>
+  </header>
+  <main class="admin-shell">
+    <div class="admin-intro"><span class="eyebrow">JKJ REALTY · PRIVATE ADMIN</span><h1>Property <em>manager.</em></h1><p>Upload a home here. Published listings appear on your public JKJ website.</p></div>
+    <section class="admin-card" id="loginCard">
+      <h2>Admin sign in</h2><p>Only the JKJ admin account can upload property photos and publish listings.</p>
+      <form id="loginForm" class="admin-form"><label>Email<input name="email" type="email" autocomplete="username" required></label><label>Password<input name="password" type="password" autocomplete="current-password" required></label><button class="button button-green" type="submit">Sign in <span>↗</span></button></form>
+      <p class="admin-status" id="loginStatus" aria-live="polite">Configure Supabase to enable sign in.</p>
+    </section>
+    <section class="admin-dashboard" id="dashboard" hidden>
+      <div class="admin-section-head"><div><h2>Add a property</h2><p>Use clear photos and accurate listing details.</p></div><button class="button button-outline" id="signOut" type="button">Sign out</button></div>
+      <form id="propertyForm" class="admin-form property-form">
+        <label>Property name<input name="title" required maxlength="100" placeholder="e.g. The Banyan House"></label>
+        <label>City and neighbourhood<input name="city" required maxlength="120" placeholder="Jubilee Hills, Hyderabad"></label>
+        <label>Price<input name="price" required maxlength="60" placeholder="₹1.42 Cr"></label>
+        <label>Property type<select name="property_type" required><option>Apartment</option><option>Villa</option><option>Plot</option><option>Independent House</option><option>Commercial</option></select></label>
+        <label>Bedrooms<input name="bedrooms" type="number" min="0" max="99" value="3" required></label>
+        <label>Bathrooms<input name="bathrooms" type="number" min="0" max="99" value="2" required></label>
+        <label>Area<input name="area" required maxlength="40" placeholder="1,850 sq.ft."></label>
+        <label>Listing badge<input name="tag" maxlength="40" value="NEW LISTING"></label>
+        <label class="admin-wide">Property photo <span class="field-hint">JPG, PNG, or WebP · up to 10 MB</span><input name="photo" type="file" accept="image/jpeg,image/png,image/webp" required></label>
+        <label class="admin-publish"><input name="is_published" type="checkbox" checked> Publish on public website after saving</label>
+        <button class="button button-green" type="submit">Upload property <span>↗</span></button>
+      </form>
+      <p class="admin-status" id="formStatus" aria-live="polite"></p>
+      <div class="admin-section-head listing-admin-heading"><div><h2>Your listings</h2><p>Unpublished listings stay hidden from visitors.</p></div></div>
+      <div class="admin-listings" id="adminListings"></div>
+    </section>
+  </main>
+</body>
+</html>

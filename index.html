@@ -4,36 +4,293 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f5ef">
-  <meta name="description" content="Find a home and plan your home loan with JKJ Realty.">
-  <title>JKJ — Find a place to call home</title>
+  <meta name="description" content="Find premium properties in Hyderabad and plan your bank home loan with JKJ. Direct WhatsApp enquiry to +91 9642638241.">
+  <title>JKJ — Real Estate &amp; Home Loans | హైదరాబాద్</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
   <script src="app.js" defer></script>
 </head>
 <body>
   <header class="topbar">
     <a class="brand" href="#home" aria-label="JKJ home"><span class="brand-mark">J</span><span>JKJ<span class="brand-dot">.</span></span></a>
-    <nav class="main-nav" aria-label="Main navigation"><a href="#homes" data-i18n="navHomes">Find a home</a><a href="#loans" data-i18n="navLoans">Home loans</a><a href="#about" data-i18n="navAbout">Why JKJ</a></nav>
-    <div class="top-actions"><button class="lang-switch" id="langSwitch" aria-label="Switch language">తెలుగు</button><a class="button button-dark nav-cta" href="#loans" data-i18n="navCta">Talk to an expert <span>↗</span></a><button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button></div>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#homes" data-i18n="navHomes">Find a home</a>
+      <a href="#loans" data-i18n="navLoans">Enquiry &amp; Loans</a>
+      <a href="#about" data-i18n="navAbout">Why JKJ</a>
+    </nav>
+    <div class="top-actions">
+      <button class="lang-switch" id="langSwitch" aria-label="Switch language">తెలుగు</button>
+      <a class="button button-dark nav-cta" href="#loans" data-i18n="navCta">Talk on WhatsApp <span>↗</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+    </div>
   </header>
   <main id="home">
     <section class="hero">
-      <div class="hero-copy"><div class="eyebrow"><span class="live-dot"></span><span data-i18n="heroEyebrow">YOUR NEXT CHAPTER STARTS HERE</span></div><h1 data-i18n="heroTitle">A home that feels<br>like <em>you.</em></h1><p class="hero-lede" data-i18n="heroLead">Find a place to put down roots. Get a home loan that helps you get there. We’ll make every step feel simpler.</p>
-        <form class="search-card" id="searchForm"><label class="search-field"><span data-i18n="searchLocation">LOCATION</span><span class="input-icon">⌖</span><input id="locationInput" placeholder="City, neighbourhood or PIN" data-i18n-placeholder="locationPlaceholder"></label><label class="search-field"><span data-i18n="searchType">I’M LOOKING FOR</span><select id="typeInput"><option value="all" data-i18n="anyHome">Any home</option><option value="Apartment" data-i18n="apartment">Apartment</option><option value="Villa" data-i18n="villa">Villa</option></select></label><button class="button button-green search-button" type="submit"><span data-i18n="searchBtn">Explore homes</span><span>↗</span></button></form>
-        <div class="hero-proof"><div class="avatar-stack"><span>R</span><span>S</span><span>M</span></div><p><strong>4.9/5</strong> <span data-i18n="heroRating">from 2,400+ happy home seekers</span></p><span class="proof-stars">★★★★★</span></div>
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span><span data-i18n="heroEyebrow">YOUR NEXT CHAPTER STARTS HERE</span></div>
+        <h1 data-i18n="heroTitle">A home that feels<br>like <em>you.</em></h1>
+        <p class="hero-lede" data-i18n="heroLead">Find verified properties in Hyderabad and secure the best bank home loan. We guide you at every step with clear answers.</p>
+        <form class="search-card" id="searchForm">
+          <label class="search-field">
+            <span data-i18n="searchLocation">LOCATION</span>
+            <span class="input-icon">⌖</span>
+            <input id="locationInput" placeholder="City, neighbourhood or PIN" data-i18n-placeholder="locationPlaceholder">
+          </label>
+          <label class="search-field">
+            <span data-i18n="searchType">I’M LOOKING FOR</span>
+            <select id="typeInput">
+              <option value="all" data-i18n="anyHome">Any home</option>
+              <option value="Apartment" data-i18n="apartment">Apartment</option>
+              <option value="Villa" data-i18n="villa">Villa</option>
+            </select>
+          </label>
+          <button class="button button-green search-button" type="submit">
+            <span data-i18n="searchBtn">Explore homes</span><span>↗</span>
+          </button>
+        </form>
+        <div class="hero-proof">
+          <div class="avatar-stack"><span>R</span><span>S</span><span>M</span></div>
+          <p><strong>4.9/5</strong> <span data-i18n="heroRating">from 2,400+ happy home seekers</span></p>
+          <span class="proof-stars">★★★★★</span>
+        </div>
       </div>
-      <div class="hero-visual"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85" alt="Sunlit, thoughtfully designed modern living room"><div class="photo-tag"><span class="tag-icon">⌂</span><span><strong data-i18n="photoTagTitle">More than a house.</strong><small data-i18n="photoTagText">A place for your story.</small></span></div><div class="hero-count"><strong>01 <span>/ 03</span></strong><div class="progress"><i></i></div><span data-i18n="featuredHome">Featured home</span></div><div class="photo-credit">A quieter kind of everyday <span>↗</span></div></div>
-      <div class="hero-note"><span>01</span><span data-i18n="heroNote">Good homes. Clear guidance. A little more peace of mind.</span><span class="note-line"></span></div>
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85" alt="Sunlit, thoughtfully designed modern living room">
+        <div class="photo-tag">
+          <span class="tag-icon">⌂</span>
+          <span>
+            <strong data-i18n="photoTagTitle">More than a house.</strong>
+            <small data-i18n="photoTagText">A place for your story.</small>
+          </span>
+        </div>
+        <div class="hero-count"><strong>01 <span>/ 03</span></strong><div class="progress"><i></i></div><span data-i18n="featuredHome">Featured home</span></div>
+        <div class="photo-credit">A quieter kind of everyday <span>↗</span></div>
+      </div>
+      <div class="hero-note">
+        <span>01</span>
+        <span data-i18n="heroNote">Good homes. Clear guidance. A little more peace of mind.</span>
+        <span class="note-line"></span>
+      </div>
     </section>
-    <section class="trust-strip"><span data-i18n="trustedBy">A HOME FOR EVERY CHAPTER, WITH SUPPORT FROM</span><div class="bank-logos"><b>HDFC <small>BANK</small></b><b><span class="sbi-mark">◉</span> SBI</b><b>axis<span>bank</span></b><b>ICICI <small>BANK</small></b><b class="kotak">kotak <small>महींद्रा</small></b></div><span class="strip-caption" data-i18n="partnerNote">Trusted lending partners</span></section>
-    <section class="listings section-wrap" id="homes"><div class="section-heading"><div><div class="eyebrow">CURATED FOR YOUR LIFE</div><h2 data-i18n="listTitle">Places to <em>belong.</em></h2><p data-i18n="listLead">Thoughtful homes in neighbourhoods worth coming home to.</p></div><a class="text-link" href="#homes" id="viewAll" data-i18n="viewAll">View all homes <span>↗</span></a></div><div class="listing-grid" id="listingGrid"></div><div id="emptyState" class="empty-state" hidden data-i18n="empty">No homes match that search yet. Try a nearby city or change your filters.</div></section>
-    <section class="loan-band" id="loans"><div class="loan-visual"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85" alt="Warm modern home with a view into the garden"><div class="loan-stamp">HOME<br>STARTS<br>HERE <span>↗</span></div><div class="loan-photo-caption">THE RIGHT PLACE, AT YOUR PACE.</div></div><div class="loan-content"><div class="eyebrow"><span class="live-dot"></span>YOUR HOME, WITH A PLAN</div><h2 data-i18n="loanTitle">The keys are closer<br>than you <em>think.</em></h2><p data-i18n="loanLead">Let’s find a home loan that fits your life. Share a few details and a real person from our lending team will help you explore your options.</p><form class="loan-form" id="loanForm"><div class="form-row"><label><span data-i18n="nameLabel">YOUR NAME</span><input required name="name" placeholder="How should we call you?" data-i18n-placeholder="namePlaceholder"></label><label><span data-i18n="phoneLabel">PHONE NUMBER</span><input required name="phone" type="tel" inputmode="tel" pattern="[0-9+() -]{10,16}" placeholder="+91 98765 43210"></label></div><div class="form-row"><label><span data-i18n="interestLabel">WHAT DO YOU NEED?</span><select name="interest" required><option value="" data-i18n="interestChoose">Choose an enquiry</option><option value="Home loan" data-i18n="interestLoan">Home loan</option><option value="Property" data-i18n="interestProperty">Buy or enquire about a property</option><option value="Both" data-i18n="interestBoth">Both property and home loan</option></select></label><label><span data-i18n="bankLabel">PREFERRED BANK</span><select name="bank"><option value="Not sure" data-i18n="bankChoose">Help me choose</option><option>HDFC Bank</option><option>State Bank of India (SBI)</option><option>ICICI Bank</option><option>Axis Bank</option><option>Kotak Mahindra Bank</option><option>Bank of Baroda</option><option>Canara Bank</option><option>Other</option></select></label></div><div class="form-row"><label><span data-i18n="cityLabel">WHERE ARE YOU LOOKING?</span><input required name="city" placeholder="City or neighbourhood" data-i18n-placeholder="cityPlaceholder"></label><label><span data-i18n="budgetLabel">PROPERTY BUDGET</span><select name="budget" required><option value="" data-i18n="budgetChoose">Choose a range</option><option>₹25–50 lakh</option><option>₹50 lakh–₹1 crore</option><option>₹1–2 crore</option><option>₹2 crore+</option></select></label></div><div class="form-row"><label><span data-i18n="propertyLabel">PROPERTY OF INTEREST (OPTIONAL)</span><select name="property"><option value="Not selected" data-i18n="propertyChoose">Choose a listed home</option><option>The Banyan House — Jubilee Hills</option><option>Sage &amp; Stone — Kondapur</option><option>The Courtyard Edit — Gachibowli</option><option data-i18n="propertyOther">Other / not listed yet</option></select></label><label><span data-i18n="loanAmountLabel">LOAN AMOUNT NEEDED (OPTIONAL)</span><input name="loanAmount" placeholder="e.g. ₹60 lakh" data-i18n-placeholder="loanAmountPlaceholder"></label></div><label><span data-i18n="notesLabel">ANYTHING ELSE? (OPTIONAL)</span><input name="notes" placeholder="Tell us what you’re looking for" data-i18n-placeholder="notesPlaceholder"></label><label class="consent"><input type="checkbox" required><span data-i18n="consentText">I agree to be contacted about home loan options.</span></label><button class="button button-green submit-button" type="submit"><span data-i18n="loanSubmit">Send enquiry on WhatsApp</span><span>↗</span></button><p class="form-message" id="formMessage" aria-live="polite"></p><small class="privacy-note" data-i18n="privacyNote">Your details stay private. No spam, ever.</small></form><div class="loan-trust"><span>✓ <span data-i18n="trust1">No-cost guidance</span></span><span>✓ <span data-i18n="trust2">Multiple bank options</span></span><span>✓ <span data-i18n="trust3">People who listen</span></span></div></div></section>
-    <section class="about section-wrap" id="about"><span class="eyebrow">A LITTLE MORE HUMAN</span><h2 data-i18n="aboutTitle">Big life choices deserve<br><em>thoughtful people.</em></h2><div class="about-bottom"><p data-i18n="aboutText">Buying a home is a thousand little decisions. We bring home seekers, great places and lending guidance together—with honest answers and room to choose what’s right for you.</p><a class="button button-outline" href="#loans" data-i18n="aboutCta">Let’s talk about your plans <span>↗</span></a></div><div class="stats-row"><div><strong>2,400<span>+</span></strong><small data-i18n="stat1">happy home seekers</small></div><div><strong>18</strong><small data-i18n="stat2">neighbourhoods covered</small></div><div><strong>12<span>+</span></strong><small data-i18n="stat3">lending partners</small></div><div><strong>4.9<span>/5</span></strong><small data-i18n="stat4">people-first rating</small></div></div></section>
+
+    <section class="trust-strip">
+      <span data-i18n="trustedBy">TRUSTED LENDING PARTNERS FOR YOUR HOME LOAN</span>
+      <div class="bank-logos">
+        <b>HDFC <small>BANK</small></b>
+        <b><span class="sbi-mark">◉</span> SBI</b>
+        <b>axis<span>bank</span></b>
+        <b>ICICI <small>BANK</small></b>
+        <b class="kotak">kotak <small>महींद्रा</small></b>
+      </div>
+      <span class="strip-caption" data-i18n="partnerNote">Leading bank tie-ups</span>
+    </section>
+
+    <section class="listings section-wrap" id="homes">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">CURATED FOR YOUR LIFE</div>
+          <h2 data-i18n="listTitle">Places to <em>belong.</em></h2>
+          <p data-i18n="listLead">Curated properties across Hyderabad’s most desirable locations.</p>
+        </div>
+        <a class="text-link" href="#homes" id="viewAll" data-i18n="viewAll">View all homes <span>↗</span></a>
+      </div>
+      <div class="listing-grid" id="listingGrid"></div>
+      <div id="emptyState" class="empty-state" hidden data-i18n="empty">No homes match that search yet. Try a nearby city or change your filters.</div>
+    </section>
+
+    <section class="loan-band" id="loans">
+      <div class="loan-visual">
+        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85" alt="Warm modern home with a view into the garden">
+        <div class="loan-stamp">JKJ<br>REALTY<br>&amp; LOANS <span>↗</span></div>
+        <div class="loan-photo-caption">THE RIGHT PLACE, AT YOUR PACE.</div>
+      </div>
+      <div class="loan-content">
+        <div class="eyebrow"><span class="live-dot"></span><span data-i18n="loanEyebrow">REAL ESTATE &amp; HOME LOAN ENQUIRY</span></div>
+        <h2 data-i18n="loanTitle">Find your home &amp; get the<br>right <em>home loan.</em></h2>
+        <p data-i18n="loanLead">Whether you want to buy a property, secure a low-interest bank loan, or both—share your details below to connect with JKJ directly on WhatsApp.</p>
+        
+        <form class="loan-form" id="loanForm">
+          <div class="form-row">
+            <label>
+              <span data-i18n="nameLabel">YOUR NAME *</span>
+              <input required name="name" id="custName" placeholder="Full name" data-i18n-placeholder="namePlaceholder">
+            </label>
+            <label>
+              <span data-i18n="phoneLabel">PHONE NUMBER *</span>
+              <input required name="phone" id="custPhone" type="tel" inputmode="tel" pattern="[0-9+() -]{10,16}" placeholder="+91 96426 38241" data-i18n-placeholder="phonePlaceholder">
+            </label>
+          </div>
+          <div class="form-row">
+            <label>
+              <span data-i18n="interestLabel">ENQUIRY TYPE *</span>
+              <select name="interest" id="custInterest" required>
+                <option value="" data-i18n="interestChoose">Choose enquiry type</option>
+                <option value="Home loan" data-i18n="interestLoan">Home loan only</option>
+                <option value="Property" data-i18n="interestProperty">Property / Real estate enquiry</option>
+                <option value="Both" data-i18n="interestBoth">Both property &amp; home loan</option>
+              </select>
+            </label>
+            <label>
+              <span data-i18n="bankLabel">PREFERRED BANK</span>
+              <select name="bank" id="custBank">
+                <option value="Not sure / Any" data-i18n="bankChoose">Help me choose / Any bank</option>
+                <option>State Bank of India (SBI)</option>
+                <option>HDFC Bank</option>
+                <option>ICICI Bank</option>
+                <option>Axis Bank</option>
+                <option>Kotak Mahindra Bank</option>
+                <option>Bank of Baroda</option>
+                <option>Canara Bank</option>
+                <option>Union Bank of India</option>
+                <option>Other Bank</option>
+              </select>
+            </label>
+          </div>
+          <div class="form-row">
+            <label>
+              <span data-i18n="cityLabel">CITY / NEIGHBOURHOOD *</span>
+              <input required name="city" id="custCity" placeholder="e.g. Hyderabad, Jubilee Hills, Gachibowli" data-i18n-placeholder="cityPlaceholder">
+            </label>
+            <label>
+              <span data-i18n="budgetLabel">PROPERTY BUDGET *</span>
+              <select name="budget" id="custBudget" required>
+                <option value="" data-i18n="budgetChoose">Select budget range</option>
+                <option>Under ₹50 lakh</option>
+                <option>₹50 lakh – ₹1 crore</option>
+                <option>₹1 – 2 crore</option>
+                <option>₹2 – 3.5 crore</option>
+                <option>₹3.5 crore+</option>
+              </select>
+            </label>
+          </div>
+          <div class="form-row">
+            <label>
+              <span data-i18n="propertyLabel">PROPERTY OF INTEREST (OPTIONAL)</span>
+              <select name="property" id="custProperty">
+                <option value="General enquiry" data-i18n="propertyChoose">Choose a listed property (optional)</option>
+                <option value="The Banyan House — Jubilee Hills">The Banyan House — Jubilee Hills</option>
+                <option value="Sage &amp; Stone — Kondapur">Sage &amp; Stone — Kondapur</option>
+                <option value="The Courtyard Edit — Gachibowli">The Courtyard Edit — Gachibowli</option>
+                <option value="The Palm Grove — Kokapet">The Palm Grove — Kokapet</option>
+                <option value="Skyline Horizon — Financial District">Skyline Horizon — Financial District</option>
+                <option value="Emerald Valley — Tellapur">Emerald Valley — Tellapur</option>
+                <option value="Other / not listed yet" data-i18n="propertyOther">Other / not listed yet</option>
+              </select>
+            </label>
+            <label>
+              <span data-i18n="loanAmountLabel">LOAN AMOUNT NEEDED (OPTIONAL)</span>
+              <input name="loanAmount" id="custLoanAmount" placeholder="e.g. ₹50 lakh or ₹1.2 Cr" data-i18n-placeholder="loanAmountPlaceholder">
+            </label>
+          </div>
+          <label>
+            <span data-i18n="notesLabel">ADDITIONAL DETAILS (OPTIONAL)</span>
+            <input name="notes" id="custNotes" placeholder="Any specific requirements, floor, timeline..." data-i18n-placeholder="notesPlaceholder">
+          </label>
+          <label class="consent">
+            <input type="checkbox" required>
+            <span data-i18n="consentText">I agree to share these details with JKJ via WhatsApp.</span>
+          </label>
+          <button class="button button-green submit-button" type="submit">
+            <span data-i18n="loanSubmit">Send enquiry on WhatsApp</span>
+            <span>↗</span>
+          </button>
+          <p class="form-message" id="formMessage" aria-live="polite"></p>
+
+          <div class="whatsapp-instruction-card" id="whatsappAlert" hidden>
+            <div class="instruction-header">
+              <div class="whatsapp-badge">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+                <span>WhatsApp</span>
+              </div>
+              <strong id="waAlertTitle" data-i18n="waAlertTitle">WhatsApp తెరవబడింది! దయచేసి 'Send' నొక్కండి</strong>
+            </div>
+            <div class="instruction-body">
+              <div class="action-highlight">
+                <span class="pulse-dot"></span>
+                <div>
+                  <p class="wa-action-text" id="waAlertStrong" data-i18n="waAlertStrong">ముఖ్య గమనిక: WhatsApp తెరిచిన తర్వాత దయచేసి "Send" (పంపండి) బటన్‌ను తప్పనిసరిగా నొక్కండి!</p>
+                  <p class="wa-action-sub" id="waAlertDesc" data-i18n="waAlertDesc">మీ విచారణ వివరాలన్నీ WhatsApp మెసేజ్‌లో సిద్ధంగా ఉన్నాయి. మీరు "Send" నొక్కినప్పుడే అవి మా JKJ బృందానికి (+91 9642638241) అందుతాయి.</p>
+                </div>
+              </div>
+              <div class="instruction-cta">
+                <a id="waDirectBtn" href="#" target="_blank" rel="noopener noreferrer" class="button-whatsapp-sm">
+                  <span data-i18n="reopenWhatsApp">WhatsApp మళ్లీ తెరవండి ↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <small class="privacy-note" data-i18n="privacyNote">Directly connects to JKJ WhatsApp (+91 9642638241). Your details remain confidential.</small>
+        </form>
+
+        <div class="loan-trust">
+          <span>✓ <span data-i18n="trust1">Direct WhatsApp support</span></span>
+          <span>✓ <span data-i18n="trust2">Multiple bank options</span></span>
+          <span>✓ <span data-i18n="trust3">Transparent local guidance</span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="about section-wrap" id="about">
+      <span class="eyebrow" data-i18n="aboutEyebrow">A LITTLE MORE HUMAN</span>
+      <h2 data-i18n="aboutTitle">Big life choices deserve<br><em>thoughtful people.</em></h2>
+      <div class="about-bottom">
+        <p data-i18n="aboutText">Buying a home is one of life’s most significant decisions. JKJ Realty bridges home seekers, curated properties, and competitive home loan rates from premier banks with honest advice and personal attention.</p>
+        <a class="button button-outline" href="#loans" data-i18n="aboutCta">Talk on WhatsApp <span>↗</span></a>
+      </div>
+      <div class="stats-row">
+        <div><strong>2,400<span>+</span></strong><small data-i18n="stat1">happy home buyers</small></div>
+        <div><strong>18</strong><small data-i18n="stat2">prime localities</small></div>
+        <div><strong>12<span>+</span></strong><small data-i18n="stat3">partner banks</small></div>
+        <div><strong>4.9<span>/5</span></strong><small data-i18n="stat4">customer rating</small></div>
+      </div>
+    </section>
   </main>
-  <footer><a class="brand" href="#home"><span class="brand-mark">J</span><span>JKJ<span class="brand-dot">.</span></span></a><p data-i18n="footerText">A good place to begin.</p><span>© 2025 JKJ Realty <span data-i18n="footerRights">All rights reserved.</span></span></footer>
-  <button class="chat-launch" id="chatLaunch" aria-label="Open chat"><span class="chat-bubble-icon">✳</span><span data-i18n="chatUs">Ask JKJ</span><i></i></button>
-  <aside class="chat-panel" id="chatPanel" aria-label="JKJ chat" aria-hidden="true"><div class="chat-head"><div class="chat-brand-mark">J</div><div><strong data-i18n="chatTitle">A little help?</strong><small><i></i><span data-i18n="chatOnline">Here to help you find home</span></small></div><button id="chatClose" aria-label="Close chat">×</button></div><div class="chat-messages" id="chatMessages"><div class="chat-day" data-i18n="today">TODAY</div><div class="message bot-message"><span data-i18n="chatGreeting">Hi there! I’m JKJ. Looking for a home or have a loan question? I’m happy to help.</span><small>JKJ · now</small></div><div class="quick-replies"><button data-reply="homes" data-i18n="quickHomes">Find a home</button><button data-reply="loans" data-i18n="quickLoans">Home loans</button><button data-reply="person" data-i18n="quickPerson">Talk to a person</button></div></div><form class="chat-compose" id="chatForm"><input id="chatInput" autocomplete="off" placeholder="Write a message…" data-i18n-placeholder="chatPlaceholder"><button aria-label="Send message">↑</button></form><div class="chat-footer" data-i18n="chatFooter">Usually replies in a few minutes</div></aside>
+
+  <footer>
+    <a class="brand" href="#home"><span class="brand-mark">J</span><span>JKJ<span class="brand-dot">.</span></span></a>
+    <p data-i18n="footerText">JKJ — Curated homes &amp; home loan advisory.</p>
+    <span>© 2026 JKJ Realty <span data-i18n="footerRights">All rights reserved.</span></span>
+  </footer>
+
+  <button class="chat-launch" id="chatLaunch" aria-label="Open chat">
+    <span class="chat-bubble-icon">💬</span>
+    <span data-i18n="chatUs">Ask JKJ</span><i></i>
+  </button>
+
+  <aside class="chat-panel" id="chatPanel" aria-label="JKJ chat" aria-hidden="true">
+    <div class="chat-head">
+      <div class="chat-brand-mark">J</div>
+      <div>
+        <strong data-i18n="chatTitle">JKJ Assistant</strong>
+        <small><i></i><span data-i18n="chatOnline">Online · Here to help you find home</span></small>
+      </div>
+      <button id="chatClose" aria-label="Close chat">×</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-day" data-i18n="today">TODAY</div>
+      <div class="message bot-message">
+        <span data-i18n="chatGreeting">Hello! I’m JKJ. Are you looking for a property in Hyderabad or need help with a bank home loan? I’m here to help.</span>
+        <small>JKJ · now</small>
+      </div>
+      <div class="quick-replies">
+        <button data-reply="homes" data-i18n="quickHomes">Find a home</button>
+        <button data-reply="loans" data-i18n="quickLoans">Home loans</button>
+        <button data-reply="property" data-i18n="quickProperty">Property enquiry</button>
+        <button data-reply="whatsapp" data-i18n="quickWhatsApp">Chat on WhatsApp</button>
+      </div>
+    </div>
+    <form class="chat-compose" id="chatForm">
+      <input id="chatInput" autocomplete="off" placeholder="Write a message…" data-i18n-placeholder="chatPlaceholder">
+      <button aria-label="Send message">↑</button>
+    </form>
+    <div class="chat-footer" data-i18n="chatFooter">Official WhatsApp: +91 9642638241</div>
+  </aside>
 </body>
 </html>
