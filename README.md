@@ -14,4 +14,4 @@ Then visit `http://localhost:8000`. No package installation or build step is req
 
 ## Notes
 
-The listings, bank references, ratings, and chat responses are demonstration content. Set `WHATSAPP_NUMBER` in `app.js` to your WhatsApp number with country code and digits only (for India, for example `919876543210`). When a visitor submits the form, JKJ WhatsApp opens with their property and loan details prefilled; the visitor must press **Send** in WhatsApp. No form data is saved by this static website.
+The listings, bank references, ratings, and chat responses are demonstration content. `WHATSAPP_NUMBER` in `app.js` is configured for JKJ enquiries. When a visitor submits the form, WhatsApp opens with their property and loan details prefilled; the visitor must press **Send** in WhatsApp. No form data is saved by this static website.
