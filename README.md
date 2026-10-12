@@ -73,6 +73,19 @@ Then open your browser and visit:
 
 ---
 
+### Method 4: Using Docker (డాకర్ ద్వారా రన్ చేయడం)
+Build and run the Docker container:
+
+```bash
+docker build -t jkj-realty .
+docker run -d -p 8080:80 --name jkj-app jkj-realty
+```
+
+Then visit:
+👉 **`http://localhost:8080`**
+
+---
+
 ## 📁 File Structure / ఫైళ్ల వివరాలు
 
 - **`index.html`**: Semantic HTML5 markup, bilingual data attributes, enquiry form, WhatsApp notification card, and chat widget.
