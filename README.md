@@ -29,8 +29,8 @@ A fast, responsive, bilingual (English & Telugu) real estate and bank home loan 
    - **Loan Amount Needed (కావలసిన రుణం మొత్తం)**
    - **Additional Notes (అదనపు వివరాలు)**
 
-5. **WhatsApp Integration with +91 9642638241 (WhatsApp అనుసంధానం):**
-   - Submitting the form opens WhatsApp directly to **`+91 9642638241`** (`https://api.whatsapp.com/send?phone=919642638241&text=...`) with all gathered details pre-formatted into an organized message.
+5. **WhatsApp Integration (WhatsApp అనుసంధానం):**
+   - Submitting the form opens WhatsApp directly (`https://api.whatsapp.com/send?text=...`) with all gathered details pre-formatted into an organized message.
    - **Clear Customer Guidance (స్పష్టమైన సూచన):** A prominent, highlighted notification box with an animated indicator informs the user:
      > **ముఖ్య గమనిక:** WhatsApp తెరిచిన తర్వాత దయచేసి **"Send" (పంపండి)** బటన్‌ను తప్పనిసరిగా నొక్కండి!  
      > (*Important: Once WhatsApp opens, you MUST press the "Send" button to deliver your enquiry!*)

@@ -108,7 +108,7 @@ const copy = {
     nameLabel: 'YOUR NAME *',
     namePlaceholder: 'Full name',
     phoneLabel: 'PHONE NUMBER *',
-    phonePlaceholder: '+91 96426 38241',
+    phonePlaceholder: '+91 98765 43210',
     interestLabel: 'ENQUIRY TYPE *',
     interestChoose: 'Choose enquiry type',
     interestLoan: 'Home loan only',
@@ -129,13 +129,13 @@ const copy = {
     notesPlaceholder: 'Any specific requirements, floor, timeline...',
     consentText: 'I agree to share these details with JKJ via WhatsApp.',
     loanSubmit: 'Send enquiry on WhatsApp',
-    privacyNote: 'Directly connects to JKJ WhatsApp (+91 9642638241). Your details remain confidential.',
+    privacyNote: 'Directly connects to JKJ WhatsApp. Your details remain confidential.',
     trust1: 'Direct WhatsApp support',
     trust2: 'Multiple bank loan choices',
     trust3: 'Transparent local guidance',
     waAlertTitle: 'WhatsApp opened with your enquiry!',
     waAlertStrong: 'Important: Please press the "Send" button in WhatsApp to submit your message!',
-    waAlertDesc: 'Your enquiry has been prefilled with all details. It will reach our JKJ team (+91 9642638241) only after you press Send in WhatsApp.',
+    waAlertDesc: 'Your enquiry has been prefilled with all details. It will reach our JKJ team only after you press Send in WhatsApp.',
     reopenWhatsApp: 'WhatsApp మళ్లీ తెరవండి (Reopen WhatsApp) ↗',
     numberNeeded: 'WhatsApp receiving number is missing.',
     whatsappReady: 'WhatsApp opened with your enquiry. Please press "Send" in WhatsApp to deliver it.',
@@ -159,13 +159,13 @@ const copy = {
     quickProperty: 'Property enquiry',
     quickWhatsApp: 'Chat on WhatsApp',
     chatPlaceholder: 'Write a message…',
-    chatFooter: 'Official WhatsApp: +91 9642638241',
+    chatFooter: 'Official JKJ WhatsApp Support',
     replyHomes: 'I can help you explore properties! Check out our featured Hyderabad listings above or search by locality.',
-    replyLoans: 'We partner with top banks including SBI, HDFC, ICICI, Axis and Kotak. Fill the enquiry form below or message our WhatsApp (+91 9642638241) to check your eligibility.',
+    replyLoans: 'We partner with top banks including SBI, HDFC, ICICI, Axis and Kotak. Fill the enquiry form below or message our WhatsApp to check your eligibility.',
     replyProperty: 'Interested in a property? Select any of our featured listings or specify your budget in the enquiry form below to get complete details.',
-    replyWhatsApp: 'You can chat with our team directly on WhatsApp (+91 9642638241). Click here: <a href="https://api.whatsapp.com/send?phone=919642638241&text=Hello%20JKJ%2C%20I%20would%20like%20to%20enquire%20about%20properties%20and%20home%20loans" target="_blank" class="chat-wa-link">Open WhatsApp ↗</a>',
+    replyWhatsApp: 'You can chat with our team directly on WhatsApp. Click here: <a href="https://api.whatsapp.com/send?text=Hello%20JKJ%2C%20I%20would%20like%20to%20enquire%20about%20properties%20and%20home%20loans" target="_blank" class="chat-wa-link">Open WhatsApp ↗</a>',
     replyHello: 'Welcome to JKJ! How can we assist you today? Looking for a new property, home loan advice, or would you like to chat directly on WhatsApp?',
-    unknown: 'I am here to help you with Hyderabad properties and bank home loans. Try the options below or chat with us directly on WhatsApp (+91 9642638241).',
+    unknown: 'I am here to help you with Hyderabad properties and bank home loans. Try the options below or chat with us directly on WhatsApp.',
     error: 'Please enter a valid 10-digit phone number and fill required fields.',
     savedToast: 'Home saved to your favourites.',
     propertySelectedToast: 'Selected property for enquiry. Complete the form below!'
@@ -204,7 +204,7 @@ const copy = {
     nameLabel: 'మీ పేరు *',
     namePlaceholder: 'పూర్తి పేరు',
     phoneLabel: 'ఫోన్ నంబర్ *',
-    phonePlaceholder: '+91 96426 38241',
+    phonePlaceholder: '+91 98765 43210',
     interestLabel: 'విచారణ రకం *',
     interestChoose: 'విచారణ రకం ఎంచుకోండి',
     interestLoan: 'గృహ రుణం మాత్రమే (Home Loan)',
@@ -225,13 +225,13 @@ const copy = {
     notesPlaceholder: 'మీకు కావలసిన ప్రత్యేక వివరాలు లేదా గడువు...',
     consentText: 'ఈ వివరాలను WhatsApp ద్వారా JKJతో పంచుకోవడానికి అంగీకరిస్తున్నాను.',
     loanSubmit: 'WhatsAppలో విచారణ పంపండి',
-    privacyNote: 'నేరుగా JKJ WhatsApp (+91 9642638241) కు చేరుతుంది. మీ వివరాలు గోప్యంగా ఉంటాయి.',
+    privacyNote: 'నేరుగా JKJ WhatsApp కు చేరుతుంది. మీ వివరాలు గోప్యంగా ఉంటాయి.',
     trust1: 'నేరుగా WhatsApp సేవలు',
     trust2: 'అనేక బ్యాంకుల రుణ ఎంపికలు',
     trust3: 'నమ్మకమైన స్థానిక మార్గదర్శకత్వం',
     waAlertTitle: 'WhatsApp తెరవబడింది! దయచేసి "Send" నొక్కండి',
     waAlertStrong: 'ముఖ్య గమనిక: WhatsApp తెరిచిన తర్వాత దయచేసి "Send" (పంపండి) బటన్‌ను తప్పనిసరిగా నొక్కండి!',
-    waAlertDesc: 'మీ విచారణ వివరాలన్నీ WhatsApp మెసేజ్‌లో సిద్ధంగా ఉన్నాయి. మీరు "Send" నొక్కినప్పుడే అవి మా JKJ బృందానికి (+91 9642638241) అందుతాయి.',
+    waAlertDesc: 'మీ విచారణ వివరాలన్నీ WhatsApp మెసేజ్‌లో సిద్ధంగా ఉన్నాయి. మీరు "Send" నొక్కినప్పుడే అవి మా JKJ బృందానికి అందుతాయి.',
     reopenWhatsApp: 'WhatsApp మళ్లీ తెరవండి ↗',
     numberNeeded: 'JKJ WhatsApp నంబర్ సెటప్ చేయాల్సి ఉంది.',
     whatsappReady: 'మీ విచారణ WhatsAppలో సిద్ధంగా ఉంది. దయచేసి WhatsAppలో "Send" నొక్కండి.',
@@ -255,13 +255,13 @@ const copy = {
     quickProperty: 'ఆస్తి విచారణ',
     quickWhatsApp: 'WhatsApp చాట్',
     chatPlaceholder: 'మీ సందేశం రాయండి…',
-    chatFooter: 'అధికారిక WhatsApp: +91 9642638241',
+    chatFooter: 'అధికారిక JKJ WhatsApp సపోర్ట్',
     replyHomes: 'ఇళ్లు వెతకడంలో సాయం చేస్తాను! పైన ఉన్న ప్రముఖ ప్రాపర్టీలను చూడండి లేదా ప్రాంతం పేరుతో వెతకండి.',
-    replyLoans: 'మేము SBI, HDFC, ICICI, Axis, Kotak తదితర బ్యాంకులతో పనిచేస్తాం. కింది ఫారమ్ నింపండి లేదా మా WhatsApp (+91 9642638241) లో సంప్రదించండి.',
+    replyLoans: 'మేము SBI, HDFC, ICICI, Axis, Kotak తదితర బ్యాంకులతో పనిచేస్తాం. కింది ఫారమ్ నింపండి లేదా మా WhatsApp లో సంప్రదించండి.',
     replyProperty: 'ఆస్తి వివరాల కోసం పైన ఉన్న ఇళ్లలో ఎంపిక చేసుకోండి లేదా కింది విచారణ ఫారమ్ ద్వారా మీ బడ్జెట్ పంపండి.',
-    replyWhatsApp: 'మా బృందంతో నేరుగా WhatsApp (+91 9642638241) లో మాట్లాడవచ్చు: <a href="https://api.whatsapp.com/send?phone=919642638241&text=నమస్కారం%20JKJ%2C%20నేను%20ఆస్తి%20మరియు%20గృహ%20రుణం%20గురించి%20విచారించాలనుకుంటున్నాను" target="_blank" class="chat-wa-link">WhatsApp తెరవండి ↗</a>',
+    replyWhatsApp: 'మా బృందంతో నేరుగా WhatsApp లో మాట్లాడవచ్చు: <a href="https://api.whatsapp.com/send?text=నమస్కారం%20JKJ%2C%20నేను%20ఆస్తి%20మరియు%20గృహ%20రుణం%20గురించి%20విచారించాలనుకుంటున్నాను" target="_blank" class="chat-wa-link">WhatsApp తెరవండి ↗</a>',
     replyHello: 'స్వాగతం! మీకు ఎలా సాయం చేయాలి: ఇల్లు వెతకాలా, గృహ రుణం కావాలా, లేక నేరుగా WhatsAppలో మాట్లాడాలా?',
-    unknown: 'హైదరాబాద్ రియల్ ఎస్టేట్ & గృహ రుణాలపై సాయం చేస్తాను. కింది ఎంపికల్లో ఒకటి ఎంచుకోండి లేదా WhatsApp (+91 9642638241) లో సంప్రదించండి.',
+    unknown: 'హైదరాబాద్ రియల్ ఎస్టేట్ & గృహ రుణాలపై సాయం చేస్తాను. కింది ఎంపికల్లో ఒకటి ఎంచుకోండి లేదా WhatsApp లో సంప్రదించండి.',
     error: 'దయచేసి సరైన 10 అంకెల ఫోన్ నంబర్‌తో పాటు అవసరమైన వివరాలన్నీ నమోదు చేయండి.',
     savedToast: 'ఇల్లు మీ ఇష్టాల జాబితాలో చేర్చాం.',
     propertySelectedToast: 'విచారణ కోసం ఇల్లు ఎంపికైంది. కింది ఫారమ్ పూర్తి చేయండి!'
@@ -269,7 +269,7 @@ const copy = {
 };
 
 let language = 'en';
-const WHATSAPP_NUMBER = '919642638241';
+const WHATSAPP_NUMBER = '';
 
 const tr = key => (copy[language] && copy[language][key]) || copy.en[key] || key;
 
@@ -438,15 +438,9 @@ document.querySelector('#loanForm').addEventListener('submit', e => {
   ].join('\n');
 
   const recipient = WHATSAPP_NUMBER.replace(/\D/g, '');
-  if (!recipient) {
-    if (status) {
-      status.textContent = tr('numberNeeded');
-      status.className = 'form-message error';
-    }
-    return;
-  }
-
-  const waUrl = `https://api.whatsapp.com/send?phone=${recipient}&text=${encodeURIComponent(message)}`;
+  const waUrl = recipient
+    ? `https://api.whatsapp.com/send?phone=${recipient}&text=${encodeURIComponent(message)}`
+    : `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
 
   // Open WhatsApp window
   window.open(waUrl, '_blank', 'noopener,noreferrer');
