@@ -49,6 +49,13 @@ A fast, responsive, bilingual (English & Telugu) real estate and bank home loan 
 
 No build steps or npm installations are required. You can preview the website using any of the following simple methods:
 
+### Public website (పబ్లిక్ వెబ్‌సైట్)
+
+After the GitHub Pages deployment completes, share this link with friends:
+**https://yathis777.github.io/jkj/**
+
+The site is redeployed automatically whenever changes are pushed to `main`. If Pages has not been enabled for the repository yet, open **Settings → Pages**, select **GitHub Actions** as the build and deployment source, and rerun the **Deploy static site to GitHub Pages** workflow from the Actions tab.
+
 ### Method 1: Using Python Local Server (సిఫార్సు చేయబడిన పద్ధతి)
 Open PowerShell or Terminal in this project directory and run:
 
