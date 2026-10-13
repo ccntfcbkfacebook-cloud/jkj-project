@@ -541,41 +541,73 @@ document.querySelectorAll('.main-nav a').forEach(a => {
 // Initial Render
 renderHomes();
 
-// If Supabase has been configured, replace demo cards with the published listings.
+// If properties have been added in Admin (Local Demo or Supabase), display them in listings
 async function loadPublishedProperties() {
-  if (!window.JKJ_SUPABASE_URL || !window.JKJ_SUPABASE_ANON_KEY || !window.supabase?.createClient) return;
+  let customProperties = [];
 
-  const db = window.supabase.createClient(window.JKJ_SUPABASE_URL, window.JKJ_SUPABASE_ANON_KEY);
-  const { data, error } = await db.from('properties').select('*').eq('is_published', true).order('created_at', { ascending: false });
-  if (error) {
-    console.warn('JKJ property listings could not be loaded from Supabase:', error.message);
-    return;
+  // 1. Read local demo properties from localStorage
+  try {
+    const local = JSON.parse(localStorage.getItem('jkj_local_properties') || '[]');
+    const published = local.filter(item => item.is_published);
+    if (published.length > 0) {
+      customProperties = published.map(item => ({
+        id: item.id,
+        title: item.title,
+        city: item.city,
+        price: item.price,
+        type: item.property_type || 'Apartment',
+        beds: `${item.bedrooms} ${item.bedrooms === 1 ? 'bed' : 'beds'}`,
+        baths: `${item.bathrooms} ${item.bathrooms === 1 ? 'bath' : 'baths'}`,
+        area: item.area,
+        tag: item.tag || 'NEW LISTING',
+        img: item.image_url
+      }));
+    }
+  } catch (e) {
+    console.warn('Error reading local demo properties:', e);
   }
 
-  homes = data.map(item => ({
-    id: item.id,
-    title: item.title,
-    city: item.city,
-    price: item.price,
-    type: item.property_type,
-    beds: `${item.bedrooms} ${item.bedrooms === 1 ? 'bed' : 'beds'}`,
-    baths: `${item.bathrooms} ${item.bathrooms === 1 ? 'bath' : 'baths'}`,
-    area: item.area,
-    tag: item.tag,
-    img: item.image_url
-  }));
-
-  const propertySelect = document.querySelector('#custProperty');
-  if (propertySelect) {
-    const promptOption = propertySelect.options[0].cloneNode(true);
-    const otherOption = propertySelect.options[propertySelect.options.length - 1].cloneNode(true);
-    const listingOptions = homes.map(home => new Option(`${home.title} — ${home.city}`, `${home.title} — ${home.city}`));
-    propertySelect.replaceChildren(promptOption, ...listingOptions, otherOption);
+  // 2. Read cloud properties if Supabase is configured
+  if (window.JKJ_SUPABASE_URL && window.JKJ_SUPABASE_ANON_KEY && window.supabase?.createClient) {
+    try {
+      const db = window.supabase.createClient(window.JKJ_SUPABASE_URL, window.JKJ_SUPABASE_ANON_KEY);
+      const { data, error } = await db.from('properties').select('*').eq('is_published', true).order('created_at', { ascending: false });
+      if (!error && data?.length) {
+        const cloudProps = data.map(item => ({
+          id: item.id,
+          title: item.title,
+          city: item.city,
+          price: item.price,
+          type: item.property_type,
+          beds: `${item.bedrooms} ${item.bedrooms === 1 ? 'bed' : 'beds'}`,
+          baths: `${item.bathrooms} ${item.bathrooms === 1 ? 'bath' : 'baths'}`,
+          area: item.area,
+          tag: item.tag,
+          img: item.image_url
+        }));
+        customProperties = [...cloudProps, ...customProperties];
+      }
+    } catch (err) {
+      console.warn('Supabase fetch error:', err);
+    }
   }
 
-  const locationInput = document.querySelector('#locationInput');
-  const typeInput = document.querySelector('#typeInput');
-  renderHomes(locationInput?.value || '', typeInput?.value || 'all');
+  if (customProperties.length > 0) {
+    homes = [...customProperties, ...homes];
+
+    const propertySelect = document.querySelector('#custProperty');
+    if (propertySelect) {
+      const promptOption = propertySelect.options[0]?.cloneNode(true) || new Option('Choose a listed property (optional)', 'General enquiry');
+      const otherOption = propertySelect.options[propertySelect.options.length - 1]?.cloneNode(true) || new Option('Other / not listed yet', 'Other / not listed yet');
+      const listingOptions = homes.map(home => new Option(`${home.title} — ${home.city}`, `${home.title} — ${home.city}`));
+      propertySelect.replaceChildren(promptOption, ...listingOptions, otherOption);
+    }
+
+    const locationInput = document.querySelector('#locationInput');
+    const typeInput = document.querySelector('#typeInput');
+    renderHomes(locationInput?.value || '', typeInput?.value || 'all');
+  }
 }
 
 loadPublishedProperties();
+

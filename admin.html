@@ -22,12 +22,48 @@
   <main class="admin-shell">
     <div class="admin-intro"><span class="eyebrow">JKJ REALTY · PRIVATE ADMIN</span><h1>Property <em>manager.</em></h1><p>Upload a home here. Published listings appear on your public JKJ website.</p></div>
     <section class="admin-card" id="loginCard">
-      <h2>Admin sign in</h2><p>Only the JKJ admin account can upload property photos and publish listings.</p>
-      <form id="loginForm" class="admin-form"><label>Email<input name="email" type="email" autocomplete="username" required></label><label>Password<input name="password" type="password" autocomplete="current-password" required></label><button class="button button-green" type="submit">Sign in <span>↗</span></button></form>
-      <p class="admin-status" id="loginStatus" aria-live="polite">Configure Supabase to enable sign in.</p>
+      <h2>Admin Sign In</h2>
+      <p>Manage your properties, photos, and published listings for JKJ Realty.</p>
+
+      <div class="demo-callout" id="demoCallout">
+        <div class="demo-badge">⚡ Instant Demo Mode</div>
+        <p>Supabase cloud credentials are not added yet. You can sign in immediately using <strong>Local Demo Mode</strong> to test adding, editing, and publishing properties right now!</p>
+        <button class="button button-green" id="enterDemoBtn" type="button" style="width:100%; justify-content:center;">
+          <span>Enter Demo Admin Panel (డెమో మోడ్)</span> <span>↗</span>
+        </button>
+      </div>
+
+      <div class="divider-text"><span>OR SIGN IN WITH SUPABASE</span></div>
+
+      <form id="loginForm" class="admin-form">
+        <label>Email<input name="email" type="email" autocomplete="username" placeholder="admin@jkj.com" required></label>
+        <label>Password<input name="password" type="password" autocomplete="current-password" placeholder="••••••••" required></label>
+        <button class="button button-outline" type="submit">Sign in <span>↗</span></button>
+      </form>
+      <p class="admin-status" id="loginStatus" aria-live="polite"></p>
+
+      <details class="supabase-guide">
+        <summary>📖 How to connect Supabase Cloud (క్లౌడ్ డేటాబేస్ సెటప్ విధానం)</summary>
+        <div class="guide-content">
+          <p>Real Cloud Database తో కనెక్ట్ చేయడానికి ఈ క్రింది 5 సులభమైన దశలను అనుసరించండి:</p>
+          <ol>
+            <li><a href="https://supabase.com" target="_blank" rel="noopener">supabase.com</a> కి వెళ్లి ఉచిత ఖాతా సృష్టించి, కొత్త ప్రాజెక్ట్ క్రియేట్ చేయండి.</li>
+            <li>Supabase లో <strong>Project Settings → API</strong> కి వెళ్లి మీ <strong>Project URL</strong> మరియు <strong>anon / publishable key</strong> కాపీ చేయండి.</li>
+            <li>మీ ప్రాజెక్ట్‌లోని <code>supabase-config.js</code> ఫైల్ ఓపెన్ చేసి ఆ రెండు విలువలని పేస్ట్ చేయండి.</li>
+            <li>Supabase డాష్‌బోర్డ్‌లో <strong>SQL Editor</strong> కి వెళ్లి, మీ ప్రాజెక్ట్‌లోని <code>supabase-properties.sql</code> కోడ్‌ను పేస్ట్ చేసి <strong>Run</strong> చేయండి.</li>
+            <li><strong>Authentication → Users</strong> కి వెళ్లి కొత్త అడ్మిన్ యూజర్‌ను క్రియేట్ చేసి, <code>app_metadata: {"role": "admin"}</code> సెట్ చేయండి.</li>
+          </ol>
+        </div>
+      </details>
     </section>
     <section class="admin-dashboard" id="dashboard" hidden>
-      <div class="admin-section-head"><div><h2>Add a property</h2><p>Use clear photos and accurate listing details.</p></div><button class="button button-outline" id="signOut" type="button">Sign out</button></div>
+      <div class="admin-section-head">
+        <div>
+          <h2>Add a property <span id="modeBadge" class="mode-badge"></span></h2>
+          <p>Use clear photos and accurate listing details.</p>
+        </div>
+        <button class="button button-outline" id="signOut" type="button">Sign out</button>
+      </div>
       <form id="propertyForm" class="admin-form property-form">
         <label>Property name<input name="title" required maxlength="100" placeholder="e.g. The Banyan House"></label>
         <label>City and neighbourhood<input name="city" required maxlength="120" placeholder="Jubilee Hills, Hyderabad"></label>
